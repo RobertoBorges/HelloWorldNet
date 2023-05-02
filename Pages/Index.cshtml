@@ -1,0 +1,58 @@
+﻿@page
+@model IndexModel
+@using System.Runtime.InteropServices
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is a Simple App</p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Operating System</td>
+            <td>@RuntimeInformation.OSDescription</td>
+        </tr>
+        <tr>
+            <td>OS Architecture</td>
+            <td>@RuntimeInformation.OSArchitecture</td>
+        </tr>
+        <tr>
+            <td>Framework</td>
+            <td>@RuntimeInformation.FrameworkDescription</td>
+        </tr>
+        <tr>
+            <td>Process Architecture</td>
+            <td>@RuntimeInformation.ProcessArchitecture</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Request Headers</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Header</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var header in HttpContext.Request.Headers)
+        {
+            <tr>
+                <td>@header.Key</td>
+                <td>@header.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
