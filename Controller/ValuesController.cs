@@ -19,7 +19,7 @@ namespace HelloWorldNet.Controller
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return $"value returned for ${id}";
         }
 
         // POST api/<ValuesController>
