@@ -12,7 +12,7 @@ namespace HelloWorldNet.Controller
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { $"value1: {DateTime.Now}", $"value2 {HttpContext.Request.Host.Value}" };
         }
 
         // GET api/<ValuesController>/5
